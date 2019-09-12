@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+TestRate.create(test_name: 'Cholesterol', test_short_name: 'CHOL', self_price: 45, dr1_price: 55)
+TestRate.create(test_name: 'Random Blood Sugar', test_short_name: 'RBS', self_price: 50, dr1_price: 60)
+TestRate.create(test_name: 'Calcium', test_short_name: 'Ca', self_price: 150, dr1_price: 180)
+TestRate.create(test_name: 'Urea', test_short_name: 'Urea', self_price: 150, dr1_price: 185)
+TestRate.create(test_name: 'SGOT', test_short_name: 'AST', self_price: 120, dr1_price: 150)
+TestRate.create(test_name: 'Bilirubin Total', test_short_name: 'BilT', self_price: 110, dr1_price: 145)
