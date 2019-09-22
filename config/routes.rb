@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/show', to: 'patients#show'
   get '/search', to: 'patients#search'
   get '/start', to: 'employees#start'
+  post '/create', to: 'patients#create'
 end

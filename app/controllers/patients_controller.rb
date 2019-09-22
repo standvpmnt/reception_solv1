@@ -2,11 +2,15 @@ class PatientsController < ApplicationController
 	before_action :find_patients, only: [:show]
 
 	def register
-		
+		@patient = Patient.new
 	end
 
 	def search
 		
+	end
+
+	def create
+		byebug
 	end
 
 	def show
