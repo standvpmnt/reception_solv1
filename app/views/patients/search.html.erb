@@ -1,9 +1,13 @@
 <h1>Welcome to finding a patient</h1>
 
-<%= form_with(url: '/show', method: "get", local: true) do %>
+<%= form_with(url: '/show', method: "get") do %>
 	<div><%= label_tag(:first_name, "First Name: ")%>
 	<%= text_field_tag(:first_name) %></div>
 	<div><%= label_tag(:contact_no, "Contact Number: ")%>
 	<%= text_field_tag(:contact_no) %></div>
 	<%= submit_tag("Search") %>
 <% end %>
+
+<div id="patients">
+  <%= render 'show' %>
+</div>
