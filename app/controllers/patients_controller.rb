@@ -1,4 +1,4 @@
-class PatientController < ApplicationController
+class PatientsController < ApplicationController
 	before_action :find_patients, only: [:show]
 
 	def register

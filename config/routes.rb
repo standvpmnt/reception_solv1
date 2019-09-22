@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get '/quote', to: 'test#search'
-  get '/register', to: 'patient#register'
-  get '/show', to: 'patient#show'
-  get '/search', to: 'patient#search'
-  get '/start', to: 'employee#start'
+  get '/quote', to: 'tests#search'
+  get '/register', to: 'patients#register'
+  get '/show', to: 'patients#show'
+  get '/search', to: 'patients#search'
+  get '/start', to: 'employees#start'
 end
