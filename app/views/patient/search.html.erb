@@ -1,4 +1,9 @@
-<h1>Your search yielded the following results</h1> <br/>
-<% @patients.each do |p| %>
-	<h3><%= p.last_name %> </h3> <br/>
-<% end %> 
+<h1>Welcome to finding a patient</h1>
+
+<%= form_with(url: '/show', method: "get", local: true) do %>
+	<div><%= label_tag(:first_name, "First Name: ")%>
+	<%= text_field_tag(:first_name) %></div>
+	<div><%= label_tag(:contact_no, "Contact Number: ")%>
+	<%= text_field_tag(:contact_no) %></div>
+	<%= submit_tag("Search") %>
+<% end %>

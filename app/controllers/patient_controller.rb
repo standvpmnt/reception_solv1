@@ -1,10 +1,20 @@
 class PatientController < ApplicationController
+	before_action :find_patients, only: [:show]
 
-	def entry
+	def register
+		
 	end
 
 	def search
-		@patients = Patient.new_lookup(params[:first_name])
+		
 	end
 
+	def show
+
+	end
+
+	private
+	def find_patients
+		@patients = Patient.lookup(params[:first_name], params[:contact_no])
+	end
 end

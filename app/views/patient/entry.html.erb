@@ -1,7 +1,0 @@
-<h1>Welcome to patient registration</h1>
-
-<%= form_with(url: '/search', method: "get", local: true) do %>
-	<%= label_tag(:first_name, "First Name: ")%>
-	<%= text_field_tag(:first_name) %>
-	<%= submit_tag("Search") %>
-<% end %>
