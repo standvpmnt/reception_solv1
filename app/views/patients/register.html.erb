@@ -1,3 +1,5 @@
+<%= render 'shared/errors', obj: @patient%>
+
 <h1>Welcome to create a new patient</h1>
 <%= form_with model: @patient, url: create_path, local: true do |f| %>
 	<%= f.label :first_name %>
