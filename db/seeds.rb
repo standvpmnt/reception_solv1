@@ -16,12 +16,12 @@ TestRate.create(test_name: 'SGOT', test_short_name: 'AST', self_price: 120, dr1_
 TestRate.create(test_name: 'Bilirubin Total', test_short_name: 'BilT', self_price: 110, dr1_price: 145)
 
 Patient.create(first_name: 'Rama', last_name: 'Devi', age: 23, address: 'Purana Qila, Near Post office Kairana Store', city: 'Jahannum',
-	state: 'UP', pincode: '235468', contact_no: 9876543210, alternate_no: '', gender: 'Female')
+	state: 'UP', pincode: '235468', contact_no: '9876543210', alternate_no: '', gender: 'Female')
 Patient.create(first_name: 'Manna', last_name: 'Dehi', age: 39, address: 'Purana Qila, Near Post office Kairana Store', city: 'Jahannum',
-	state: 'UP', pincode: '235468', contact_no: 9875643210, alternate_no: 9876543210, gender: 'Female')
+	state: 'UP', pincode: '235468', contact_no: '9875643210', alternate_no: 9876543210, gender: 'Female')
 Patient.create(first_name: 'Ram', last_name: 'Kumar', age: 53, address: 'Purana Qila, Near Post office Kairana Store', city: 'Jahannum',
-	state: 'UP', pincode: '235468', contact_no: 9867543210, alternate_no: 9876543210, gender: 'Male')
+	state: 'UP', pincode: '235468', contact_no: '9867543210', alternate_no: 9876543210, gender: 'Male')
 Patient.create(first_name: 'Qadir', last_name: 'Ahmed', age: 83, address: 'Purana Qila, Near Post office Kairana Store', city: 'Jahannum',
-	state: 'UP', pincode: '235468', contact_no: 9876543201, alternate_no: '', gender: 'Male')
+	state: 'UP', pincode: '235468', contact_no: '9876543201', alternate_no: '', gender: 'Male')
 Patient.create(first_name: 'Kabir', last_name: 'Singh', age: 65, address: 'Purana Qila, Near Post office Kairana Store', city: 'Jahannum',
-	state: 'UP', pincode: '235468', contact_no: 9876542310, alternate_no: '', gender: 'Male')
+	state: 'UP', pincode: '235468', contact_no: '9876542310', alternate_no: '', gender: 'Male')

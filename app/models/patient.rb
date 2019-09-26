@@ -1,9 +1,12 @@
 class Patient < ApplicationRecord
+	before_save { self.email_id = email_id.downcase }
 	validates :first_name, presence: true, length: { minimum: 3}
 	validates :gender, presence: true
-	validates :contact_no, uniqueness: true
+	validates :contact_no, uniqueness: true, length: { is: 10 }, allow_blank: true
 	validates :date_of_birth, absence: true, unless: -> {age.blank?}
 	validates :age, presence: true, unless: -> {date_of_birth?}
+	VALID_EMAIL_REGEX= /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	validates :email_id, format: {with: VALID_EMAIL_REGEX}, allow_blank: true
 
 	def self.lookup(first_name, contact_no)
 		if !(first_name.blank?)

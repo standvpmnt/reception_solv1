@@ -23,9 +23,11 @@
 	<%= f.label :pincode %>
 	<%= f.text_field :pincode %> <br/>
 	<%= f.label :contact_no %>
-	<%= f.telephone_field :contact_no %>
+	<%= f.telephone_field :contact_no, placeholder: "10 digits only" %>
 	<%= f.label :alternate_no %>
 	<%= f.telephone_field :alternate_no %> <br/>
+	<%= f.label :email_id %>
+	<%= f.email_field :email_id, placeholder: "abcd@test.com" %> <br/>
 
 	<%= f.submit "Create" %>
 <% end %>
