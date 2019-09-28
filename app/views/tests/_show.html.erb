@@ -1,0 +1,17 @@
+<% if @tests %>
+	<h1>Your search yielded the following results</h1> <br/>
+	<table>
+		<tr>
+			<th>Test Name</th>
+			<th>Short Name</th>
+			<th>Self Price</th>
+		</tr>
+		<% @tests.each do |t| %>
+		<tr>
+			<td><%= t.test_name %></td>
+			<td><%= t.test_short_name %></td>
+			<td><%= t.self_price %></td>
+		</tr>
+	<% end %> 
+	</table>
+<% end %>
