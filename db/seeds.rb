@@ -5,23 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-TestRate.destroy_all
+# TestRate.destroy_all
 Patient.destroy_all
+Employee.destroy_all
+Location.destroy_all
 
-TestRate.create(test_name: 'Cholesterol', test_short_name: 'CHOL', self_price: 45, dr1_price: 55)
-TestRate.create(test_name: 'Random Blood Sugar', test_short_name: 'RBS', self_price: 50, dr1_price: 60)
-TestRate.create(test_name: 'Calcium', test_short_name: 'Ca', self_price: 150, dr1_price: 180)
-TestRate.create(test_name: 'Urea', test_short_name: 'Urea', self_price: 150, dr1_price: 185)
-TestRate.create(test_name: 'SGOT', test_short_name: 'AST', self_price: 120, dr1_price: 150)
-TestRate.create(test_name: 'Bilirubin Total', test_short_name: 'BilT', self_price: 110, dr1_price: 145)
+Location.create(location_name: 'Banthra')
+Location.create(location_name: 'Suratganj')
+Location.create(location_name: 'Basti')
+Location.create(location_name: 'Bahraich')
 
 Patient.create(first_name: 'Rama', last_name: 'Devi', age: 23, address: 'Purana Qila, Near Post office Kairana Store', city: 'Jahannum',
-	state: 'UP', pincode: '235468', contact_no: '9876543210', alternate_no: '', gender: 'Female')
+	state: 'UP', pincode: '235468', contact_no: '9876543210', alternate_no: '', gender: 'Female', location_id: 4)
 Patient.create(first_name: 'Manna', last_name: 'Dehi', age: 39, address: 'Purana Qila, Near Post office Kairana Store', city: 'Jahannum',
-	state: 'UP', pincode: '235468', contact_no: '9875643210', alternate_no: 9876543210, gender: 'Female')
+	state: 'UP', pincode: '235468', contact_no: '9875643210', alternate_no: 9876543210, gender: 'Female', location_id: 3)
 Patient.create(first_name: 'Ram', last_name: 'Kumar', age: 53, address: 'Purana Qila, Near Post office Kairana Store', city: 'Jahannum',
-	state: 'UP', pincode: '235468', contact_no: '9867543210', alternate_no: 9876543210, gender: 'Male')
+	state: 'UP', pincode: '235468', contact_no: '9867543210', alternate_no: 9876543210, gender: 'Male', location_id: 2)
 Patient.create(first_name: 'Qadir', last_name: 'Ahmed', age: 83, address: 'Purana Qila, Near Post office Kairana Store', city: 'Jahannum',
-	state: 'UP', pincode: '235468', contact_no: '9876543201', alternate_no: '', gender: 'Male')
+	state: 'UP', pincode: '235468', contact_no: '9876543201', alternate_no: '', gender: 'Male', location_id: 2)
 Patient.create(first_name: 'Kabir', last_name: 'Singh', age: 65, address: 'Purana Qila, Near Post office Kairana Store', city: 'Jahannum',
-	state: 'UP', pincode: '235468', contact_no: '9876542310', alternate_no: '', gender: 'Male')
+	state: 'UP', pincode: '235468', contact_no: '9876542310', alternate_no: '', gender: 'Male', location_id: 1)
+
+Employee.create(first_name: 'Hemant', last_name: 'Singh', role: 'lab_technician', contact_no: '9876543210', admin: false, location_id: 2)
+Employee.create(first_name: 'Ram', last_name: 'Shankar', role: 'lab_technician', contact_no: '9876543211', admin: false, location_id: 1)
+Employee.create(first_name: 'Laalta', last_name: 'Prasad', role: 'lab_technician', contact_no: '9876543212', admin: false, location_id: 1)
+Employee.create(first_name: 'Rama', last_name: 'Kumar', role: 'nurse', contact_no: '9876543213', admin: false, location_id: 3)
+Employee.create(first_name: 'Kunti', last_name: 'Devi', role: 'nurse', contact_no: '9876543214', admin: false, location_id: 4)
+Employee.create(first_name: 'Akriti', last_name: 'Srivastava', role: 'lab_technician', contact_no: '9876543215', admin: false, location_id: 3)
+Employee.create(first_name: 'Akshay', last_name: 'Goyal', role: 'nurse', contact_no: '9876543216', admin: false, location_id: 3)
+Employee.create(first_name: 'Tanmay', last_name: 'Agrawal', role: 'xray_technician', contact_no: '9876543217', admin: false, location_id: 2)

@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_26_024841) do
+ActiveRecord::Schema.define(version: 2019_09_29_152332) do
+
+  create_table "employees", force: :cascade do |t|
+    t.integer "location_id", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "role"
+    t.string "contact_no"
+    t.boolean "admin"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["location_id"], name: "index_employees_on_location_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "location_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "patients", force: :cascade do |t|
     t.string "first_name"
@@ -27,15 +45,9 @@ ActiveRecord::Schema.define(version: 2019_09_26_024841) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "gender"
     t.string "email_id"
+    t.integer "location_id"
+    t.index ["location_id"], name: "index_patients_on_location_id"
   end
 
-  create_table "test_rates", force: :cascade do |t|
-    t.string "test_name"
-    t.string "test_short_name"
-    t.integer "self_price"
-    t.integer "dr1_price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
+  add_foreign_key "patients", "locations"
 end
