@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_29_152332) do
+ActiveRecord::Schema.define(version: 2019_09_29_180353) do
+
+  create_table "doctors", force: :cascade do |t|
+    t.string "name"
+    t.decimal "rev_share", precision: 6, scale: 5
+    t.integer "location_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "employee_id"
+    t.index ["employee_id"], name: "index_doctors_on_employee_id"
+    t.index ["location_id"], name: "index_doctors_on_location_id"
+  end
 
   create_table "employees", force: :cascade do |t|
     t.integer "location_id", null: false
@@ -47,6 +58,20 @@ ActiveRecord::Schema.define(version: 2019_09_29_152332) do
     t.string "email_id"
     t.integer "location_id"
     t.index ["location_id"], name: "index_patients_on_location_id"
+  end
+
+  create_table "test_details", force: :cascade do |t|
+    t.string "test_name"
+    t.string "test_short_name"
+    t.string "test_other_name"
+    t.string "vial_type"
+    t.boolean "fasting_requirement"
+    t.string "test_method"
+    t.decimal "low_value"
+    t.decimal "high_value"
+    t.text "description"
+    t.string "report_units"
+    t.string "test_category"
   end
 
   add_foreign_key "patients", "locations"
