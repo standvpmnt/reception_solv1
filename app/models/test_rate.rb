@@ -1,9 +1,7 @@
 class TestRate < ApplicationRecord
+	validates :test_price, presence: true
 
-	def self.lookup(test_name)
-		if !(test_name.blank?)
-			@tests = TestRate.where('test_name LIKE ?', "%#{test_name}%").or(TestRate.where('test_short_name LIKE ?', "%#{test_name}%"))
-		end
-	end
+	belongs_to :test_detail
+	belongs_to :doctors
 
 end

@@ -62,3 +62,10 @@
 # 					vial_type: 'EDTA', fasting_requirement: false, test_method: 'Pulse-height', low_value: 4000, high_value: 11000, 
 # 					description: 'Whtie Blood Cell count per micro-litre of blood', report_units: '/muL', test_category: 'Haematology')
 
+TestRate.create(test_detail_id: 6, test_price: 120)
+TestRate.create(test_detail_id: 5, test_price: 140)
+TestRate.create(test_detail_id: 4, test_price: 150)
+TestRate.create(test_detail_id: 3, test_price: 100)
+TestRate.create(test_detail_id: 2, test_price: 180)
+TestRate.create(test_detail_id: 1, test_price: 70)
+TestRate.create(test_detail_id: 4, test_price: 80)

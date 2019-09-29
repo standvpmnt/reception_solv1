@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_29_180353) do
+ActiveRecord::Schema.define(version: 2019_09_29_205001) do
 
   create_table "doctors", force: :cascade do |t|
     t.string "name"
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(version: 2019_09_29_180353) do
     t.text "description"
     t.string "report_units"
     t.string "test_category"
+  end
+
+  create_table "test_rates", force: :cascade do |t|
+    t.integer "test_detail_id", null: false
+    t.integer "doctors_id"
+    t.decimal "test_price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["doctors_id"], name: "index_test_rates_on_doctors_id"
+    t.index ["test_detail_id"], name: "index_test_rates_on_test_detail_id"
   end
 
   add_foreign_key "patients", "locations"
