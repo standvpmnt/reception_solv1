@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_29_205001) do
+ActiveRecord::Schema.define(version: 2019_10_01_202444) do
 
   create_table "doctors", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_09_29_205001) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "employee_id"
+    t.string "contact_no"
     t.index ["employee_id"], name: "index_doctors_on_employee_id"
     t.index ["location_id"], name: "index_doctors_on_location_id"
   end
@@ -76,12 +77,30 @@ ActiveRecord::Schema.define(version: 2019_09_29_205001) do
 
   create_table "test_rates", force: :cascade do |t|
     t.integer "test_detail_id", null: false
-    t.integer "doctors_id"
+    t.integer "doctor_id", null: false
     t.decimal "test_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["doctors_id"], name: "index_test_rates_on_doctors_id"
+    t.index ["doctor_id"], name: "index_test_rates_on_doctor_id"
     t.index ["test_detail_id"], name: "index_test_rates_on_test_detail_id"
+  end
+
+  create_table "xray_details", force: :cascade do |t|
+    t.string "xray_name"
+    t.text "description"
+    t.integer "exposure_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "xray_rates", force: :cascade do |t|
+    t.integer "xray_detail_id", null: false
+    t.integer "location_id", null: false
+    t.decimal "xray_price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["location_id"], name: "index_xray_rates_on_location_id"
+    t.index ["xray_detail_id"], name: "index_xray_rates_on_xray_detail_id"
   end
 
   add_foreign_key "patients", "locations"

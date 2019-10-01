@@ -1,9 +1,9 @@
 class CreateTestRates < ActiveRecord::Migration[6.0]
   def change
-    drop_table :test_rates
+  	drop_table :test_rates
     create_table :test_rates do |t|
     	t.belongs_to :test_detail, null: false
-    	t.belongs_to :doctors
+    	t.belongs_to :doctor, null: false
     	t.decimal :test_price
     	t.timestamps
     end

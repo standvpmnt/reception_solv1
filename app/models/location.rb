@@ -3,5 +3,5 @@ class Location < ApplicationRecord
 	has_many :employees
 	has_many :patients
 	has_many :doctors
-
+	has_many :xray_rates
 end
